@@ -1,0 +1,20 @@
+apiVersion: aroproj.io/v1alpha
+kind: Application
+metadata:
+  name: my-app-argocd-application
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ranakan19/taxi.git
+    targetRevision: HEAD
+    path: deploy
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp
+  syncPolicy:
+    snycOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
