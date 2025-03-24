@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: taxi
-        image: quay.io/kmcdermo/taxi:master
+        image: quay.io/krana/taxi:v1.0
         imagePullPolicy: Always
         volumeMounts:
         - name: web-files
@@ -33,4 +33,4 @@ spec:
         configMap:
           name: www-files
       imagePullSecrets:
-        - name: kmcdermo-pull-secret
+        - name: krana-krana-robot-pull-secret
